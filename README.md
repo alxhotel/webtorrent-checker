@@ -6,7 +6,7 @@
 
 Check the health of a torrent in Webtorrent and BitTorrent
 
-LIVE: [https://check.openwebtorrent.com](https://check.openwebtorrent.com)
+LIVE: [https://checker.openwebtorrent.com](https://checker.openwebtorrent.com)
 
 ## Build
 
