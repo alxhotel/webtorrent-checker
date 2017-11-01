@@ -1,0 +1,40 @@
+extends layout.pug
+
+block body
+	h1#logo Webtorrent Checker
+	p.subtitle Check the health of a torrent in Webtorrent and BitTorrent
+	
+	#search
+		form
+			p
+				input(type='text', id='magnet-input', name='magnet_link', placeholder='magnet:')
+				input(type='submit', id='submit')
+			div.separator or
+			p
+				input(type='file', id='file-input', name='torrent_file')
+
+		#loading
+			i(class='spinner')
+			p Loading health info of&nbsp;
+				span(class='info-hash') ...
+
+		#error(style='display: none;')
+
+		#results(style='display: none;')
+			#bittorrent-results
+				ul
+					li BitTorrent
+					li Peers:
+						span(id='bittorrent-peers') 0
+					li Seeders:
+						span(id='bittorrent-seeders') 0
+			#webtorrent-results
+				ul
+					li WebTorrent
+					li Peers:
+						span(id='webtorrent-peers') 0
+					li Seeders:
+						span(id='webtorrent-seeders') 0
+	footer
+		p
+			small Powered by <a href="https://webtorrent.io" target="_blank">WebTorrent</a>

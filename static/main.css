@@ -1,0 +1,116 @@
+body {
+	text-align: center;
+	font-family: sans-serif;
+}
+
+a {
+	color: #2aab00;
+}
+
+#logo {
+	margin: 20px 0px 10px 0px;
+}
+
+.subtitle {
+	color: #7d868c;
+	margin: 0px 0px 20px 0px;
+}
+
+#search {
+	margin: 30px 0;
+}
+
+#search #magnet-input {
+	width: 300px;
+	font-size: 16px;
+}
+
+#search #file-input {
+	width: 365px;
+	font-size: 16px;	
+}
+
+#search #submit {
+	width: 65px;
+	font-size: 16px;
+}
+
+#loading {
+	display: none;
+}
+
+#error {
+	color: red;
+}
+
+#bittorrent-results {
+	display: inline-block;
+	background: #f3901a;
+	border-radius: 8px;
+	color: #fff;
+	text-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+	font-weight: bold;
+	font-size: 16px;
+	margin: 0px 15px;
+}
+
+#webtorrent-results {
+	display: inline-block;
+	background: #0465c0;
+	border-radius: 8px;
+	color: #fff;
+	text-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+	font-weight: bold;
+	font-size: 16px;
+	margin: 0px 15px;
+}
+
+#results {
+	margin: 30px 0px;
+}
+
+#results ul {
+	padding: 10px 20px;
+	margin: 0px;
+	list-style: none;
+}
+
+#results ul li:first-child {
+	text-decoration: underline;
+	margin-bottom: 10px;
+}
+
+.translucent {
+	opacity: 0.5;
+}
+
+.separator {
+	position: relative;
+	text-transform: uppercase;
+	color: #7d868c;
+	font-size: 13px;
+}
+
+.separator::before {
+	width: 168px;
+	height: 1px;
+	background: #BDC2C4;
+	content: " ";
+	display: inline-block;
+	text-align: right;
+	position: absolute;
+	top: 50%;
+	margin-left: -170px;
+}
+
+.separator::after {
+	width: 168px;
+	height: 1px;
+	background: #BDC2C4;
+	content: " ";
+	display: inline-block;
+	text-align: right;
+	position: absolute;
+	top: 50%;
+	margin-left: 2px;
+}

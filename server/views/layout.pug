@@ -1,0 +1,23 @@
+html(lang='en')
+	head
+		title= rawTitle || (title && (title + ' - WebTorrent Checker')) || 'WebTorrent Checker'
+
+		meta(charset='utf-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+
+		link(rel='stylesheet', href='/main.css', charset='utf-8')
+		link(rel='icon', href='/favicon.ico', type='image/x-icon')
+
+		block head
+	body
+		block body
+		script(src='/bundle.js')
+
+		script.
+			window.ga = window.ga || function () {
+				(ga.q = ga.q || []).push(arguments)
+			}
+			ga.l = +new Date
+			ga('create', 'UA-89734572-4', 'auto')
+			ga('send', 'pageview')
+		script(async, src='//www.google-analytics.com/analytics.js')

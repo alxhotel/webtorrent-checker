@@ -1,0 +1,43 @@
+var path = require('path')
+var downgrade = require('downgrade')
+var pug = require('pug')
+var bodyParser = require('body-parser')
+var express = require('express')
+var app = express()
+
+var config = require('../config')
+
+// Use pug for templates
+app.set('views', path.join(__dirname, 'views'))
+app.set('view engine', 'pug')
+app.engine('pug', pug.renderFile)
+
+// Body Parse
+app.use(bodyParser.json())
+
+// Serve static resources
+app.use(express.static(path.join(__dirname, '../static')))
+
+// Serve all the pug pages
+app.get('/', function (req, res) {
+  res.render('index', { rawTitle: 'WebTorrent Checker - Check any magnet link or torrent file' })
+})
+
+// Magnet by POST
+app.post('/check', function (req, res) {
+  res.json({
+    webtorrent: {
+      seeders: 10,
+      peers: 12
+    },
+    bittorrent: {
+      seeders: 20,
+      peers: 22
+    }
+  })
+})
+
+app.listen(config.port, function () {
+  console.log('Webtorrent-Checker app is listening on port ' + config.port + '!')
+  downgrade()
+})

@@ -1,0 +1,94 @@
+ module.exports = function () {
+  // Initialize page
+  init()
+
+  function init () {
+    // Initialize listeners
+    var form = document.querySelector('#search form')
+    if (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault()
+        checkHealth(document.querySelector('form #magnet-input').value.trim(), function (response) {
+          // Health info
+          console.log(response)
+
+          // Show response
+          showResponse(response)
+        })
+      })
+    }
+
+    var fileInput = document.querySelector('#file-input')
+    if (fileInput) {
+      fileInput.addEventListener('onchange', function (e) {
+        e.preventDefault()
+
+        // Check amount
+        if (fileInput.files.length == 0) return //showError('No file selected')
+
+        // Check type
+        if (fileInput.files[0].type != 'application/x-bittorrent') {
+          return showError('File selected is not a torrent')
+        }
+
+        checkHealth(fileInput.files[0], function (response) {
+          // Health info
+          console.log(response)
+
+          // Show response
+          showResponse(response)
+        })
+      })
+    }
+  }
+
+  function checkHealth(input, callback) {
+    console.log('Checking health of: ' + magnetLink)
+
+    var xmlhttp = new XMLHttpRequest()
+    xmlhttp.open("POST", "/check")
+
+    var formData = new FormData()
+    if (input instanceof File) {
+      formData.append('torrent', input)
+      xmlhttp.send(formData)
+    } else {
+      xmlhttp.setRequestHeader("Content-Type", "application/json")
+      xmlhttp.send(JSON.stringify({
+        magnet: magnetLink
+      }))
+   }
+    xmlhttp.onreadystatechange = function () {
+      if (this.status == 200) {
+        var response = JSON.parse(this.responseText)
+        if (callback) callback(response)
+      }
+    }
+  }
+
+  function showResponse(response) {
+    var results = document.querySelector('#results')
+    results.style.display = 'block'
+    if (response.error) {
+      // Show error
+      results.style.display = 'block'
+    } else {
+      // Show numbers
+      var bittorrentPeers = document.querySelector('#bittorrent-peers')
+      var bittorrentSeeders = document.querySelector('#bittorrent-seeders')
+      var webtorrentPeers = document.querySelector('#webtorrent-peers')
+      var webtorrentSeeders = document.querySelector('#webtorrent-seeders')
+
+      bittorrentPeers.text = response.bittorrent.peers
+      bittorrentSeeders.text = response.bittorrent.seeders
+      bittorrentPeers.text = response.webtorrent.peers
+      bittorrentSeeders.text = response.webtorrent.seeders
+    }
+  }
+
+  function hideResponse() {
+    // Hide responseç
+    var results = document.querySelector('#results')
+    results.style.display = 'none'
+  }
+}

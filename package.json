@@ -1,0 +1,53 @@
+{
+  "name": "webtorrent-checker",
+  "version": "1.0.0",
+  "description": "Check the health of a magnet link or torrent file in Webtorrent or Bittorrent",
+  "main": "index.js",
+  "dependencies": {
+    "bittorrent-tracker": "^9.2.3",
+    "body-parser": "^1.18.2",
+    "browserify": "^14.5.0",
+    "downgrade": "^1.1.1",
+    "express": "^4.16.2",
+    "parse-torrent": "^5.8.3",
+    "pug": "^2.0.0-beta4",
+    "webtorrent-health": "^1.1.1"
+  },
+  "devDependencies": {
+    "standard": "^10.0.3"
+  },
+  "scripts": {
+    "test": "standard",
+    "build": "npm run build-js",
+    "build-js": "browserify client > static/bundle.js",
+    "start": "npm run build-js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alxhotel/webtorrent-checker.git"
+  },
+  "keywords": [
+    "webtorrent",
+    "torrent",
+    "status",
+    "check",
+    "checker",
+    "webrtc",
+    "tcp",
+    "udp",
+    "online",
+    "web",
+    "service",
+    "seeds",
+    "seeders",
+    "leach",
+    "leachers",
+    "seed"
+  ],
+  "author": "Alex <alxmorais8@msn.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alxhotel/webtorrent-checker/issues"
+  },
+  "homepage": "https://github.com/alxhotel/webtorrent-checker#readme"
+}
