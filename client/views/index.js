@@ -106,7 +106,7 @@ module.exports = function () {
       if (info.tracker.indexOf('wss') >= 0) {
         torrent = results.webtorrent
       } else {
-        torrent = results.bittorent
+        torrent = results.bittorrent
       }
 
       torrent.num_trackers++
