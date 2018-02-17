@@ -1,7 +1,5 @@
 # Webtorrent Checker
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/alxhotel/webtorrent-checker.svg)](https://greenkeeper.io/)
-
 [![Build Status][webtorrent-checker-ti]][webtorrent-checker-tu]
 [![Dependency Status][webtorrent-checker-di]][webtorrent-checker-du]
 [![Standard - Javascript Style Guide][standard-image]][standard-url]
