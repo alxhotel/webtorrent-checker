@@ -12,13 +12,13 @@ LIVE: [https://checker.openwebtorrent.com](https://checker.openwebtorrent.com)
 
 ```sh
 npm install
-npm start
+npm build
 ```
 
 ## Usage
 
 ```sh
-nodejs server/index.js
+npm start
 ```
 
 ## License
