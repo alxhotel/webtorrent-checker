@@ -20,7 +20,7 @@
     "test": "standard",
     "build": "npm run build-js",
     "build-js": "browserify client > static/bundle.js",
-    "start": "npm run build-js"
+    "start": "nodejs server/index.js"
   },
   "repository": {
     "type": "git",
