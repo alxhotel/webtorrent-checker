@@ -9,7 +9,7 @@
     "browserify": "^16.1.0",
     "downgrade": "^1.1.1",
     "express": "^4.16.2",
-    "parse-torrent": "^5.8.3",
+    "parse-torrent": "^6.0.0",
     "pug": "^2.0.0-beta4",
     "webtorrent-health": "^1.1.1"
   },
