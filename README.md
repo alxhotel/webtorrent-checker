@@ -26,7 +26,7 @@ npm start
 MIT. Copyright (c) [Alex](http://github.com/alxhotel)
 
 [webtorrent-checker-ti]: https://img.shields.io/travis/alxhotel/webtorrent-checker/master.svg
-[webtorrent-checker-tu]: https://travis-ci.org/alxhotel/webtorrent-checker
+[webtorrent-checker-tu]: https://travis-ci.com/alxhotel/webtorrent-checker
 [webtorrent-checker-di]: https://david-dm.org/alxhotel/webtorrent-checker.svg
 [webtorrent-checker-du]: https://david-dm.org/alxhotel/webtorrent-checker
 [standard-image]: https://img.shields.io/badge/code_style-standard-brightgreen.svg
