@@ -4,7 +4,7 @@
   "description": "Check the health of a magnet link or torrent file in Webtorrent or Bittorrent",
   "main": "index.js",
   "dependencies": {
-    "bittorrent-tracker": "^9.2.3",
+    "bittorrent-tracker": "^9.15.0",
     "body-parser": "^1.18.2",
     "browserify": "^16.1.0",
     "downgrade": "^1.1.1",
