@@ -6,7 +6,7 @@
   "dependencies": {
     "bittorrent-tracker": "^9.15.0",
     "body-parser": "^1.19.0",
-    "browserify": "^16.1.0",
+    "browserify": "^16.5.1",
     "downgrade": "^1.1.1",
     "express": "^4.17.1",
     "parse-torrent": "^7.1.3",
