@@ -1,11 +1,11 @@
-var path = require('path')
-var downgrade = require('downgrade')
-var webtorrentHealth = require('webtorrent-health')
-var pug = require('pug')
-var express = require('express')
-var app = express()
+const path = require('path')
+const downgrade = require('downgrade')
+const webtorrentHealth = require('webtorrent-health')
+const pug = require('pug')
+const express = require('express')
+const app = express()
 
-var config = require('../config')
+const config = require('../config')
 
 // Use pug for templates
 app.set('views', path.join(__dirname, 'views'))
