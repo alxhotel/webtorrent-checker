@@ -10,7 +10,7 @@
     "downgrade": "^1.1.4",
     "express": "^4.17.1",
     "parse-torrent": "^9.1.3",
-    "pug": "^3.0.0",
+    "pug": "^3.0.2",
     "webtorrent-health": "^1.1.1"
   },
   "devDependencies": {
