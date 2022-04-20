@@ -14,7 +14,7 @@
     "webtorrent-health": "^1.1.1"
   },
   "devDependencies": {
-    "standard": "^16.0.3"
+    "standard": "^17.0.0"
   },
   "scripts": {
     "test": "standard",
