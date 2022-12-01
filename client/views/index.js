@@ -1,5 +1,5 @@
 /* global XMLHttpRequest */
-const parseTorrent = require('parse-torrent')
+import parseTorrent from 'parse-torrent'
 
 module.exports = function () {
   // Initialize page
