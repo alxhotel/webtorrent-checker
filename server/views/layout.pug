@@ -15,10 +15,8 @@ html(lang='en')
 		script(src='/bundle.js')
 
 		script.
-			window.ga = window.ga || function () {
-				(ga.q = ga.q || []).push(arguments)
-			}
-			ga.l = +new Date
-			ga('create', 'UA-89734572-4', 'auto')
-			ga('send', 'pageview')
-		script(async, src='//www.google-analytics.com/analytics.js')
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-S1RNG05QZN');
+		script(async, src='//www.googletagmanager.com/gtag/js?id=G-S1RNG05QZN')
