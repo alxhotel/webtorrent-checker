@@ -1,5 +1,4 @@
 const path = require('path')
-const downgrade = require('downgrade')
 const webtorrentHealth = require('webtorrent-health')
 const pug = require('pug')
 const express = require('express')
@@ -38,5 +37,4 @@ app.get('/check', function (req, res) {
 
 app.listen(config.port, function () {
   console.log('Webtorrent-Checker app is listening on port ' + config.port + '!')
-  downgrade()
 })
