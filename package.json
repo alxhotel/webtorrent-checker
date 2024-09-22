@@ -7,7 +7,7 @@
     "bittorrent-tracker": "^10.0.0",
     "body-parser": "^1.20.0",
     "browserify": "^17.0.0",
-    "express": "^4.19.2",
+    "express": "^4.21.0",
     "parse-torrent": "^11.0.1",
     "pug": "^3.0.3",
     "webtorrent-health": "^1.2.0"
