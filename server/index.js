@@ -35,6 +35,8 @@ app.get('/check', function (req, res) {
   })
 })
 
-app.listen(config.port, function () {
+app.listen(config.port, function (err) {
+  // Express 5 passes server errors (e.g. EADDRINUSE) to this callback
+  if (err) throw err
   console.log('Webtorrent-Checker app is listening on port ' + config.port + '!')
 })

@@ -1,5 +1,5 @@
 /* global XMLHttpRequest */
-import parseTorrent from 'parse-torrent'
+import parseTorrent, { remote as parseTorrentRemote, toMagnetURI } from 'parse-torrent'
 
 module.exports = function () {
   // Initialize page
@@ -9,7 +9,7 @@ module.exports = function () {
     // Initialize listeners
     const form = document.querySelector('#search form')
     if (form) {
-      form.addEventListener('submit', function (e) {
+      form.addEventListener('submit', async function (e) {
         e.preventDefault()
         const magnetInput = document.querySelector('form #magnet-input')
         const magnetLink = magnetInput.value.trim()
@@ -17,7 +17,7 @@ module.exports = function () {
         let parsedTorrent
         try {
           // Parse magnet link
-          parsedTorrent = parseTorrent(magnetLink)
+          parsedTorrent = await parseTorrent(magnetLink)
         } catch (err) {
           return showError('Invalid magnet link')
         }
@@ -44,11 +44,11 @@ module.exports = function () {
         if (fileInput.files.length === 0) return showError('No file selected')
 
         // Parse torrent
-        parseTorrent.remote(fileInput.files[0], function (err, parsedTorrent) {
+        parseTorrentRemote(fileInput.files[0], function (err, parsedTorrent) {
           if (err) return showError('Invalid torrent file')
 
           // Torrent to magnet link
-          const magnetLink = parseTorrent.toMagnetURI(parsedTorrent)
+          const magnetLink = toMagnetURI(parsedTorrent)
 
           // Get health
           fileInput.value = fileInput.defaultValue
