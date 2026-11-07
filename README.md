@@ -11,8 +11,14 @@ LIVE: [https://checker.openwebtorrent.com](https://checker.openwebtorrent.com)
 
 ```sh
 npm install
-npm build
+npm run build
 ```
+
+`npm run build` bundles the client (`client/`) into `static/bundle.js`, which
+is what browsers load. The bundle isn't in git, so run it again after every
+change to `client/` or to the dependencies, or the site keeps serving the old
+code. (`npm build` without `run` is not the same thing: since npm 7 it's an
+unknown command and builds nothing.)
 
 ## Usage
 
