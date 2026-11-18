@@ -1,10 +1,49 @@
+/* Colors: light by default, dark when the system prefers it, unless the
+   theme toggle saved a choice (data-theme on <html>) */
+:root {
+	color-scheme: light;
+	--bg: #ffffff;
+	--text: #000000;
+	--muted: #7d868c;
+	--link: #2aab00;
+	--error: #d40000;
+	--rule: #bdc2c4;
+	--toggle-hover: #f0f2f3;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root:not([data-theme="light"]) {
+		color-scheme: dark;
+		--bg: #15181b;
+		--text: #e8eaed;
+		--muted: #9aa4aa;
+		--link: #5bd43a;
+		--error: #ff6b6b;
+		--rule: #3d4448;
+		--toggle-hover: #23282c;
+	}
+}
+
+:root[data-theme="dark"] {
+	color-scheme: dark;
+	--bg: #15181b;
+	--text: #e8eaed;
+	--muted: #9aa4aa;
+	--link: #5bd43a;
+	--error: #ff6b6b;
+	--rule: #3d4448;
+	--toggle-hover: #23282c;
+}
+
 body {
 	text-align: center;
 	font-family: sans-serif;
+	background: var(--bg);
+	color: var(--text);
 }
 
 a {
-	color: #2aab00;
+	color: var(--link);
 }
 
 #logo {
@@ -12,7 +51,7 @@ a {
 }
 
 .subtitle {
-	color: #7d868c;
+	color: var(--muted);
 	margin: 0px 0px 20px 0px;
 }
 
@@ -39,7 +78,7 @@ a {
 }
 
 #error {
-	color: red;
+	color: var(--error);
 }
 
 #bittorrent-results {
@@ -86,14 +125,14 @@ a {
 .separator {
 	position: relative;
 	text-transform: uppercase;
-	color: #7d868c;
+	color: var(--muted);
 	font-size: 13px;
 }
 
 .separator::before {
 	width: 168px;
 	height: 1px;
-	background: #BDC2C4;
+	background: var(--rule);
 	content: " ";
 	display: inline-block;
 	text-align: right;
@@ -105,11 +144,67 @@ a {
 .separator::after {
 	width: 168px;
 	height: 1px;
-	background: #BDC2C4;
+	background: var(--rule);
 	content: " ";
 	display: inline-block;
 	text-align: right;
 	position: absolute;
 	top: 50%;
 	margin-left: 2px;
+}
+
+/* Theme toggle: shows the moon in light mode and the sun in dark mode */
+#theme-toggle {
+	position: absolute;
+	top: 12px;
+	right: 12px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 36px;
+	height: 36px;
+	padding: 0;
+	border: 1px solid var(--rule);
+	border-radius: 50%;
+	background: var(--bg);
+	color: var(--text);
+	cursor: pointer;
+}
+
+#theme-toggle:hover {
+	background: var(--toggle-hover);
+}
+
+#theme-toggle:focus-visible {
+	outline: 2px solid var(--link);
+	outline-offset: 2px;
+}
+
+#theme-toggle .icon-sun {
+	display: none;
+}
+
+/* Keep the title clear of the toggle on phones */
+@media (max-width: 520px) {
+	#logo {
+		padding: 0 52px;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	:root:not([data-theme="light"]) #theme-toggle .icon-sun {
+		display: block;
+	}
+
+	:root:not([data-theme="light"]) #theme-toggle .icon-moon {
+		display: none;
+	}
+}
+
+:root[data-theme="dark"] #theme-toggle .icon-sun {
+	display: block;
+}
+
+:root[data-theme="dark"] #theme-toggle .icon-moon {
+	display: none;
 }
